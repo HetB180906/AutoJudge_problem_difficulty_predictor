@@ -1,4 +1,4 @@
-AutoJudge -- A model for predicting score and difficulty forCompetitive Programming problems.
+AutoJudge -- A model for predicting score and difficulty for Competitive Programming problems.
 
 Predicts: 
 Problem Class ---> easy, medium, hard
