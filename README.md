@@ -24,6 +24,7 @@ Linear Regression: for problem_score
 
 Status
 Baseline model implemented
+Web Interface made using streamlit
 
 Future Work
 add more features (keywords, mathematical symbols)
