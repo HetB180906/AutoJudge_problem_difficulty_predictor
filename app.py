@@ -1,14 +1,5 @@
 import streamlit as st
-import pickle 
-
-with open("models/probclass_model.pkl","rb") as f:
-    clf_model=pickle.load(f)
-
-with open("models/probscore_model.pkl","rb") as f:
-    reg_model=pickle.load(f)
-
-with open("models/tfidf_vectorizer.pkl","rb") as f:
-    vec=pickle.load(f)
+from src.model import full_pred
 
 st.title("AutoJudge - Problem difficulty predictor")
 st.write("Paste your problem details below and know your problem difficulty.")
@@ -21,10 +12,8 @@ if st.button("Predict Difficulty"):
         st.warning("Enter text before predicting!!!")
     else:
         text=prob_des+" "+input_des+" "+output_des
-        X=vec.transform([text])
-        pred_class=clf_model.predict(X)[0]
-        pred_score=reg_model.predict(X)[0]
+        result=full_pred(text)
         st.subheader("Results")
-        st.write(f"**Predicted Difficulty:** {pred_class}")
-        st.write(f"**Predicted Score:** {round(pred_score,2)}")
+        st.write(f"**Predicted Difficulty:** {result['difficulty']}")
+        st.write(f"**Predicted Score:** {result['predicted_score']}")
 
