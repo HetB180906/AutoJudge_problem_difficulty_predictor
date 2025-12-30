@@ -45,8 +45,11 @@ def pred_problem_class(text:str):
 
 def pred_problem_score(text:str):
     text=clean_text(text)
-    X=vectorizer.transform([text])
-    score=score_model.predict(X)[0]
+    X_tfidf=vectorizer.transform([text])
+    feats=extract_features(text)
+    feats_scaled=scaler.transform(feats)
+    X=hstack([X_tfidf, feats_scaled])
+    score = score_model.predict(X)[0]
     return float(score)
 
 def full_pred(text:str):
