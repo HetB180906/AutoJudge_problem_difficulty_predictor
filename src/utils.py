@@ -16,9 +16,6 @@ def load_vectorizer():
 def load_classification_model():
     return load_pickle("probclass_model.pkl")
 
-def load_regression_model():
-    return load_pickle("probscore_model.pkl")
-
 def clean_text(text:str)->str:
     if not isinstance(text,str):
         text=str(text)
