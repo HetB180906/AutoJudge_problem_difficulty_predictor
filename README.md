@@ -1,106 +1,65 @@
-Student Details
+Student Details<br>
+Name: Het Amitbhai Bharadia<br>
+Branch: B Tech CSE<br>
+Enrollment No: 24114040<br><br>
 
-Name: Het Amitbhai Bharadia
-
-Branch: B Tech CSE
-
-Enrollment No: 24114040
-
-Project
-
+Project<br>
 AutoJudge -- A model for predicting score and difficulty for Competitive Programming problems.
+<br>Predicts:
+<br>Problem Class ---> easy, medium, hard
+<br>Problem Score ---> numerical difficulty score
 
-Predicts:
-
-Problem Class ---> easy, medium, hard
-
-Problem Score ---> numerical difficulty score
-
-Dataset Used
-
-Source:
+<br><br>Dataset Used
+<br>Source:
 https://github.com/AREEG94FAHAD/TaskComplexityEval-24
+<br>Records: 4112
+<br>Important fields:
+<br>    title
+<br>    description
+<br>    input_description
+<br>    output_description
+<br>    problem_class (label)
+<br>    problem_score (target variable of regression)
 
-Records: 4112
+<br><br>Features Extracted
+<br>Combined all the problems text and used a TF-IDF vectorizer
+<br>Extracted other features such as average word length, words and phrases related to competitive programming
+<br>The features were scaled using a standard scaler and combined
 
-Important fields:
+<br><br>Classification
+<br>Random Forest Classifier used for classification:
+<br>Accuracy: 0.5078
+<br>Confusion Matrix and classification report: Mentioned in report
 
-title
+<br><br>Regression
+<br>3 separate random forest regresion models used for each class (Easy, Medium and Hard)
+<br><br>Easy Model:
+<br>MAE: 3.255
+<br>RMSE: 3.838
+<br>R2: -2.209
 
-description
+<br>Medium Model:
+<br>MAE: 2.167
+<br>RMSE: 2.577
+<br>R2: -0.393
 
-input_description
+<br>Hard Model:
+<br>MAE: 2.245
+<br>RMSE: 2.801
+<br>R2: -0.606
 
-output_description
+<br><br>Steps to run locally
+<br>Clone the github repository.
+<br>Install the base requirements, mentioned in requirements.txt.
+<br>Open terminal and start a python virtual environment.
+<br>Run the train.py file (The train file contains the entire code of everything form data preprocessing to feature extraction to classification and regression).
+<br>After running the file, either run main.py to test locally, or run the command “streamlit run app.py” to run on web.
+<br>Enter problem description and get the predicted class and score.
 
-problem_class (label)
-
-problem_score (target variable of regression)
-
-Features Extracted
-
-Combined all the problems text and used a TF-IDF vectorizer
-
-Extracted other features such as average word length, words and phrases related to competitive programming
-
-The features were scaled using a standard scaler and combined
-
-Classification
-
-Random Forest Classifier used for classification:
-
-Accuracy: 0.5078
-
-Confusion Matrix and classification report: Mentioned in report
-
-Regression
-
-3 separate random forest regresion models used for each class (Easy, Medium and Hard)
-
-Easy Model:
-
-MAE: 3.255
-
-RMSE: 3.838
-
-R2: -2.209
-
-Medium Model:
-
-MAE: 2.167
-
-RMSE: 2.577
-
-R2: -0.393
-
-Hard Model:
-
-MAE: 2.245
-
-RMSE: 2.801
-
-R2: -0.606
-
-Steps to run locally
-
-Clone the github repository.
-
-Install the base requirements, mentioned in requirements.txt.
-
-Open terminal and start a python virtual environment.
-
-Run the train.py file (The train file contains the entire code of everything form data preprocessing to feature extraction to classification and regression).
-
-After running the file, either run main.py to test locally, or run the command “streamlit run app.py” to run on web.
-
-Enter problem description and get the predicted class and score.
-
-Web Interface
-
-Web interface implemented using streamlit. Simple and basic UI.
+<br><br>Web Interface
+<br>Web interface implemented using streamlit. Simple and basic UI.
 Text fields for entering problem statement, input description and output description.
+<br>Click Predict button to predict the score and class.
 
-Click Predict button to predict the score and class.
-
-Demo Video Link
-Project Report Link
+<br><br>Demo Video Link
+<br><br>Project Report Link
