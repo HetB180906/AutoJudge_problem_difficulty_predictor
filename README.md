@@ -62,4 +62,6 @@ Text fields for entering problem statement, input description and output descrip
 <br>Click Predict button to predict the score and class.
 
 <br><br>Demo Video Link
+<br> https://drive.google.com/file/d/1DoJ6Z23CiD48EjATP785zxmXoLuC80nc/view?usp=sharing
 <br><br>Project Report Link
+<br> https://drive.google.com/file/d/1OcJNNA3mJtVD6rz2szFzadzurgmqyWiy/view?usp=sharing
